@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{241:function(e){e.exports=JSON.parse('{"id":"examples/CustomFields/CompositeFieldSchema","title":"CompositeFieldSchema","description":"```js","source":"@site/../docs/examples/CustomFields/CompositeFieldSchema.md","permalink":"/docs/examples/CustomFields/CompositeFieldSchema"}')}}]);
