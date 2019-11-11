@@ -2,7 +2,16 @@ import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import { connectField, filterDOMProps } from 'uniforms';
 
-const DateConstructor = globalThis.Date;
+const getGlobalThis = () => {
+  if (typeof globalThis !== 'undefined') return globalThis;
+  if (typeof self !== 'undefined') return self;
+  if (typeof window !== 'undefined') return window;
+  if (typeof global !== 'undefined') return global;
+  if (typeof this !== 'undefined') return this;
+  throw new Error('Unable to locate global `this`');
+};
+
+const DateConstructor = getGlobalThis().Date;
 const dateFormat = value => value && value.toISOString().slice(0, -8);
 const dateParse = (timestamp, onChange) => {
   const date = new DateConstructor(timestamp);
